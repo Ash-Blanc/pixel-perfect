@@ -1,6 +1,4 @@
 # Environment variables
-.env
-.env.local
 .env.*.local
 
 # Dependencies
@@ -11,7 +9,6 @@ venv/
 .venv/
 
 # IDE
-.vscode/
 .idea/
 *.swp
 *.swo
@@ -28,3 +25,4 @@ build/
 # Better Agents
 .better-agents/
 tmp/
+config.bat

@@ -37,6 +37,11 @@ def create_developer_agent(base_dir: str = ".") -> Agent:
 
     instructions = """Implement the migration plan by converting files to Nuxt.js (Nuxt 4 target).
 
+STEP 0: REALITY CHECK
+- The Architect might have hallucinated files.
+- Before converting ANY file, check if the source file actually exists in the file system.
+- If the plan says to convert 'src/pages/Home.jsx' but it doesn't exist, SKIP IT and log a warning.
+
 STEP 1: SCAFFOLDING (If starting fresh)
 1. Check if the output directory exists and is empty.
 2. If it needs scaffolding, use the `shell` tool to run: `npx nuxi@latest init <output_dir> --packageManager npm --gitInit false`
@@ -91,6 +96,11 @@ async def create_developer_agent_with_mcp(base_dir: str = ".") -> tuple[Agent, M
     tools = [file_tools, nuxt_mcp, ShellTools()]
     
     instructions = """Implement the migration plan by converting files to Nuxt.js (Nuxt 4 target).
+    
+STEP 0: REALITY CHECK
+- The Architect might have hallucinated files.
+- Before converting ANY file, check if the source file actually exists in the file system.
+- If the plan says to convert 'src/pages/Home.jsx' but it doesn't exist, SKIP IT and log a warning.
 
 STEP 1: SCAFFOLDING
 - If the output directory is empty or missing, SCALFFOLD IT FIRST.
