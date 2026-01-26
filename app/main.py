@@ -4,6 +4,10 @@ import asyncio
 import os
 import sys
 
+# making it compatible for non-linux systems
+if os.name == 'nt' and 'HOME' not in os.environ:
+    os.environ['HOME'] = os.environ.get('USERPROFILE','')
+    
 import cli2
 
 # Ensure app package is importable when run directly
