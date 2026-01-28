@@ -23,7 +23,7 @@ Pixel Perfect is an advanced AI agent built with the Agno framework, designed to
 
 1.  **Clone the repository:**
     ```bash
-    gh clone repo Ash-Blanc/pixel-perfect
+    gh repo clone Ash-Blanc/pixel-perfect
     cd pixel-perfect
     ```
 
